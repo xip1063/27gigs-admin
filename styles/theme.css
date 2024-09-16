@@ -1,0 +1,11 @@
+.btn {
+  top: 33px;
+  left: 1673px;
+  width: 167px;
+  height: 56px;
+  background: transparent linear-gradient(99deg, #d941cc 0%, #5736de 100%) 0% 0%
+    no-repeat padding-box;
+  border: 1px solid #7309ef;
+  border-radius: 28px;
+  opacity: 1;
+}
