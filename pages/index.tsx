@@ -1,3 +1,5 @@
+import OverView from '@/components/Home/OverView';
+import TopPerformingPages from '@/components/Home/TopPages';
 import { formatNumber } from '@/helpers';
 import { Cell, Row, Table } from '@/ui/Table';
 import { TableHeaders } from '@/ui/Table/TableHeaders';
@@ -74,24 +76,35 @@ export default function DashboardIndex() {
       <Head>
         <title>Dashboard</title>
       </Head>
-      <main className='max-w-8xl mx-auto px-4 pt-8'>
-        <Table>
-          <TableHeaders headers={headers} />
-          <tbody>
-            {events.map((event, index) => (
-              <Row key={index}>
-                <Cell>{event.name}</Cell>
-                <Cell>{event.tickets}</Cell>
-                <Cell>${formatNumber(event.amount)}</Cell>
-                <Cell>
-                  <Link className='hover:text-sky-500' href='/pages'>
-                    {event.page}
-                  </Link>
-                </Cell>
-              </Row>
-            ))}
-          </tbody>
-        </Table>
+      <main className='max-w-8xl mx-auto px-4 pt-8 pb-16'>
+        <h1 className='font-semibold text-xl prose text-slate-950'>
+          Good afternoon, Martin
+        </h1>
+        {/* Add graphs */}
+        <div className='mt-8 pb-10 grid lg:grid-cols-2 gap-5'>
+          <OverView />
+          <TopPerformingPages />
+        </div>
+        <div>
+          <h2 className='font-semibold text-slate-900 mb-4'>Recent Orders</h2>
+          <Table>
+            <TableHeaders headers={headers} />
+            <tbody>
+              {events.map((event, index) => (
+                <Row key={index}>
+                  <Cell>{event.name}</Cell>
+                  <Cell>{event.tickets}</Cell>
+                  <Cell>${formatNumber(event.amount)}</Cell>
+                  <Cell>
+                    <Link className='hover:text-sky-500' href='/pages'>
+                      {event.page}
+                    </Link>
+                  </Cell>
+                </Row>
+              ))}
+            </tbody>
+          </Table>
+        </div>
       </main>
     </>
   );

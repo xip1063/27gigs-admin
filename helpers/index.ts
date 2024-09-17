@@ -60,3 +60,7 @@ export function formatNumber(amount: number) {
     maximumFractionDigits: 2,
   });
 }
+
+export function classNames(...classes: any) {
+  return classes.filter(Boolean).join(' ');
+}

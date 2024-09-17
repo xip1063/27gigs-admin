@@ -1,14 +1,90 @@
 import type { Config } from 'tailwindcss';
 import defaultTheme from 'tailwindcss/defaultTheme';
+import colors from 'tailwindcss/colors';
 
 const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './ui/**/*.{js,ts,jsx,tsx,mdx}',
+    './node_modules/@tremor/**/*.{js,ts,jsx,tsx}',
+  ],
+  safelist: [
+    {
+      pattern:
+        /^(bg-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
+      variants: ['hover', 'ui-selected'],
+    },
+    {
+      pattern:
+        /^(text-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
+      variants: ['hover', 'ui-selected'],
+    },
+    {
+      pattern:
+        /^(border-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
+      variants: ['hover', 'ui-selected'],
+    },
+    {
+      pattern:
+        /^(ring-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
+    },
+    {
+      pattern:
+        /^(stroke-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
+    },
+    {
+      pattern:
+        /^(fill-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
+    },
   ],
   theme: {
     extend: {
+      colors: {
+        tremor: {
+          brand: {
+            faint: colors.sky[50],
+            muted: colors.sky[200],
+            subtle: colors.sky[400],
+            DEFAULT: colors.sky[500],
+            emphasis: colors.sky[700],
+            inverted: colors.white,
+          },
+          background: {
+            muted: colors.slate[50],
+            subtle: colors.slate[100],
+            DEFAULT: colors.white,
+            emphasis: colors.slate[700],
+          },
+          border: { DEFAULT: colors.slate[200] },
+          ring: { DEFAULT: colors.slate[200] },
+          content: {
+            subtle: colors.slate[400],
+            DEFAULT: colors.slate[500],
+            emphasis: colors.slate[700],
+            strong: colors.slate[900],
+            inverted: colors.white,
+          },
+        },
+      },
+      boxShadow: {
+        'tremor-input': '0 1px 2px 0 rgb(0 0 0 / 0.05)',
+        'tremor-card':
+          '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+        'tremor-dropdown':
+          '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+      },
+      borderRadius: {
+        'tremor-small': '0.375rem',
+        'tremor-default': '0.5rem',
+        'tremor-full': '9999px',
+      },
+      fontSize: {
+        'tremor-label': ['0.75rem', { lineHeight: '1rem' }],
+        'tremor-default': ['0.875rem', { lineHeight: '1.25rem' }],
+        'tremor-title': ['1.125rem', { lineHeight: '1.75rem' }],
+        'tremor-metric': ['1.875rem', { lineHeight: '2.25rem' }],
+      },
       typography: (theme: any) => ({
         DEFAULT: {
           css: {
@@ -198,6 +274,8 @@ const config: Config = {
   plugins: [
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('@headlessui/tailwindcss'),
     //@ts-ignore
     function ({ addVariant }) {
       addVariant(
@@ -212,7 +290,6 @@ const config: Config = {
       addVariant('scrollbar', '&::-webkit-scrollbar');
       addVariant('scrollbar-track', '&::-webkit-scrollbar-track');
       addVariant('scrollbar-thumb', '&::-webkit-scrollbar-thumb');
-      addVariant('demo-dark', '.demo-dark &');
     },
   ],
 };
