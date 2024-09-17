@@ -52,3 +52,11 @@ export function titleCase(value: string, options: Options = {}) {
 export function capitalize(text: string) {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
+
+export function formatNumber(amount: number) {
+  // Convert the number to a string with commas and two decimal places
+  return amount.toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+}

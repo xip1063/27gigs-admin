@@ -16,7 +16,9 @@ export default function Header() {
         <div className='relative hidden lg:flex items-center ml-auto'>
           <nav className='text-sm leading-6 font-semibold text-slate-700 dark:text-slate-200'>
             <ul className='flex space-x-8'>
-              <Button className='rounded-full'>Create</Button>
+              <Button size='sm' className='rounded-full'>
+                Create
+              </Button>
             </ul>
           </nav>
           <div className='flex items-center border-l border-slate-200 ml-6 pl-6'>
