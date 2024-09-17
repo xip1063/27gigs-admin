@@ -1,4 +1,5 @@
 import Button from '@/ui/Button';
+import { PlusSignIcon } from 'hugeicons-react';
 import Link from 'next/link';
 
 export default function Header() {
@@ -16,7 +17,11 @@ export default function Header() {
         <div className='relative hidden lg:flex items-center ml-auto'>
           <nav className='text-sm leading-6 font-semibold text-slate-700 dark:text-slate-200'>
             <ul className='flex space-x-8'>
-              <Button size='sm' className='rounded-full'>
+              <Button
+                size='sm'
+                className='rounded-full border-purple-500 bg-transparent text-purple-500'
+                leftSlot={<PlusSignIcon className='size-6 text-purple-500' />}
+              >
                 Create
               </Button>
             </ul>
