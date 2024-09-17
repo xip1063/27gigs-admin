@@ -1,4 +1,5 @@
 import { Card } from '@tremor/react';
+import Head from 'next/head';
 import {
   HiOutlineCalendar,
   HiOutlineChartBarSquare,
@@ -8,13 +9,18 @@ import {
 
 export default function PagesPage() {
   return (
-    <main className='max-w-8xl mx-auto px-4 py-10'>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-10'>
-        {[...Array(15).keys()].map((item) => (
-          <EventsGrid key={item} />
-        ))}
-      </div>
-    </main>
+    <>
+      <Head>
+        <title>Pages</title>
+      </Head>
+      <main className='max-w-8xl mx-auto px-4 py-10'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-10'>
+          {[...Array(15).keys()].map((item) => (
+            <EventsGrid key={item} />
+          ))}
+        </div>
+      </main>
+    </>
   );
 }
 

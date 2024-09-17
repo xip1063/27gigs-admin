@@ -24,11 +24,7 @@ export default function Sidebar() {
   return (
     <aside className='hidden lg:block fixed z-20 inset-0 bg-white  right-auto w-[16rem] pb-10 pr-6 border-r border-[#DFE3E6]'>
       <nav id='nav' className='lg:text-sm px-6 lg:leading-6 relative'>
-        <div className='sticky top-0 -ml-0.5 pointer-events-none'>
-          <div className='bg-white' />
-          <div className='h-8 bg-gradient-to-b from-white' />
-        </div>
-        <ul>
+        <ul className='mt-[82px]'>
           {navigation.map((navItem) => (
             <li key={navItem.title}>
               <a
