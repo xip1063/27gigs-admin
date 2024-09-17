@@ -77,7 +77,7 @@ export default function DashboardIndex() {
         <title>Dashboard</title>
       </Head>
       <main className='max-w-8xl mx-auto px-4 pt-8 pb-16'>
-        <h1 className='font-semibold text-xl prose text-slate-950'>
+        <h1 className='font-semibold text-xl prose font-heading text-slate-950'>
           Good afternoon, Martin
         </h1>
         {/* Add graphs */}
@@ -86,7 +86,9 @@ export default function DashboardIndex() {
           <TopPerformingPages />
         </div>
         <div>
-          <h2 className='font-semibold text-slate-900 mb-4'>Recent Orders</h2>
+          <h2 className='font-semibold font-heading text-slate-900 mb-4'>
+            Recent Orders
+          </h2>
           <Table>
             <TableHeaders headers={headers} />
             <tbody>
