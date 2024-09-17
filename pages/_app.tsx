@@ -47,7 +47,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
       <Header />
       <div>
         <Sidebar />
-        <div className='lg:pl-[19.5rem] bg-[#fbfcfd]'>
+        <div className='lg:pl-[19.5rem] min-h-screen bg-[#fbfcfd]'>
           <Component {...pageProps} />
         </div>
       </div>

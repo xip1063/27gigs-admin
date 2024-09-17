@@ -41,7 +41,7 @@ export default function TopPerformingPages() {
     <>
       <Card className='p-0'>
         <div className='flex items-center justify-between border-b border-tremor-border px-6 py-4 dark:border-dark-tremor-border'>
-          <p className='font-medium text-tremor-content-strong dark:text-dark-tremor-content-strong'>
+          <p className='font-medium font-heading text-tremor-content-strong dark:text-dark-tremor-content-strong'>
             Top Performing Pages
           </p>
           <p className='text-tremor-label font-medium  text-tremor-content dark:text-dark-tremor-content'>

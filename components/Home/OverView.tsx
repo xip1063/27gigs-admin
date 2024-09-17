@@ -83,7 +83,7 @@ export default function OverView() {
   return (
     <>
       <Card>
-        <h3 className='ml-1 mr-1 font-medium text-tremor-content-strong dark:text-dark-tremor-content-strong'>
+        <h3 className='ml-1 mr-1 font-medium font-heading text-tremor-content-strong'>
           Overview
         </h3>
 
