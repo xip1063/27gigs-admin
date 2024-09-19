@@ -29,7 +29,7 @@ export default function Sidebar() {
   return (
     <aside className='hidden lg:block fixed z-20 inset-0 bg-white  right-auto w-[16rem] pb-10 pr-6 border-r border-[#DFE3E6]'>
       <nav id='nav' className='lg:text-sm px-6 lg:leading-6 relative'>
-        <ul className='mt-[82px]'>
+        <ul className='mt-24'>
           {navigation.map((navItem) => (
             <li key={navItem.title}>
               <Button
