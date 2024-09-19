@@ -177,7 +177,9 @@ export default function DashboardIndex() {
             />
           </div>
           <div className='col-span-2 pl-4'>
-            <h2 className='text-xl font-semibold mb-4'>Order Stats</h2>
+            <h2 className='text-xl font-semibold text-slate-900 mb-4'>
+              Order Stats
+            </h2>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-4 items-center'>
               <div className='flex flex-col items-center'>
                 <p className='mb-2.5 text-sm text-gray-500'>Lorem ipsum</p>
