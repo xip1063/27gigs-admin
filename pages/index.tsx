@@ -1,11 +1,14 @@
 import OverView from '@/components/Home/OverView';
 import TopPerformingPages from '@/components/Home/TopPages';
 import { formatNumber } from '@/helpers';
+import Button from '@/ui/Button';
+import Modal, { ModalActions, ModalBody, ModalTitle } from '@/ui/Modal';
 import { Cell, Row, Table } from '@/ui/Table';
 import { TableHeaders } from '@/ui/Table/TableHeaders';
 import { AreaChart, Card } from '@tremor/react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const events = [
   {
@@ -135,11 +138,22 @@ const chartdata = [
 
 export default function DashboardIndex() {
   const headers = ['Name', 'Tickets', 'Amount', 'Page'];
+  const [open, setOpen] = useState(true);
   return (
     <>
       <Head>
         <title>Dashboard</title>
       </Head>
+      <Modal open={open} onClose={setOpen}>
+        <ModalTitle>Test</ModalTitle>
+        <ModalBody>Body</ModalBody>
+        <ModalActions>
+          <Button size='sm' variant='destructive'>
+            Deactivate
+          </Button>
+          <Button size='sm'>Submit</Button>
+        </ModalActions>
+      </Modal>
       <main className='max-w-8xl mx-auto px-4 pt-8 pb-16'>
         <h1 className='font-semibold text-xl prose text-black'>
           Good afternoon, Martin
@@ -176,11 +190,11 @@ export default function DashboardIndex() {
               onValueChange={(v) => console.log(v)}
             />
           </div>
-          <div className='col-span-2 pl-4'>
-            <h2 className='text-xl font-semibold text-slate-900 mb-4'>
+          <div className='col-span-2'>
+            <h2 className='text-xl px-8 font-semibold text-slate-900 mb-4'>
               Order Stats
             </h2>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-4 items-center'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-x-4 items-center'>
               <div className='flex flex-col items-center'>
                 <p className='mb-2.5 text-sm text-gray-500'>Lorem ipsum</p>
                 <CircularProgress percentage={75} color='text-green-500' />

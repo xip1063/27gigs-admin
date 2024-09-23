@@ -37,7 +37,7 @@ export default function Sidebar() {
                 leftSlot={
                   <navItem.icon
                     className={mergeClasses(
-                      'size-5 mr-2',
+                      'size-5 mr-1.5',
                       navItem.href === pathname
                         ? ''
                         : 'text-slate-500 hover:text-slate-600'
@@ -45,7 +45,7 @@ export default function Sidebar() {
                   />
                 }
                 className={mergeClasses(
-                  'w-full mb-4',
+                  'w-full mb-3',
                   pathname === navItem.href
                     ? 'btn-gradient border-0'
                     : 'bg-transparent border-0 text-slate-700'
